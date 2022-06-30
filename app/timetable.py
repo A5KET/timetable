@@ -8,5 +8,5 @@ def index():
     return flask.render_template('index.html')
 
 @app.route('/<timetable>')
-def index(timetable): 
+def timetable(timetable): 
     return f'<h1>Your timetable {timetable}'
