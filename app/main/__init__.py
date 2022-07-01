@@ -1,6 +1,6 @@
 import flask
 
 
-main_blueprint = flask.Blueprint('main', __name__)
+main = flask.Blueprint('main', __name__)
 
 from . import views, errors

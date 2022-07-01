@@ -10,8 +10,8 @@ def create_app():
 
     db.init_app(app)
 
-    from .main import main_blueprint
+    from .main import main as main_bp
 
-    app.register_blueprint(main_blueprint)
+    app.register_blueprint(main_bp)
 
     return app
