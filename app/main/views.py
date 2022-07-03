@@ -10,4 +10,7 @@ def index():
 
 @main.route('/<timetable_name>')
 def timetable(timetable_name):
-    return flask.render_template('timetable.html', timetable_name=timetable_name)
+    return flask.render_template('timetable.html',
+                                timetable_name=timetable_name,
+                                days_of_week=['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
+    )
