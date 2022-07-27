@@ -48,4 +48,4 @@ instance/
 venv/
 
 
-test.db
+test.sqlite

@@ -1,25 +1,37 @@
 import os
-import dotenv 
 
 
-dotenv.load_dotenv('.env')
+if os.path.exists('.env'):
+    import dotenv 
+    dotenv.load_dotenv('.env')
 
 
 class Config:
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 
 
-class DevConfig(Config):
+class DevelopmentConfig(Config):
     FLASK_ENV = 'production'
     SQLALCHEMY_DATABASE_URI = os.environ.get('TEST_DATABASE_URI')
 
 
-class ProdConfig(Config):
+class TestingConfig(Config):
+    TESTING = True
+    SQLALCHEMY_DATABASE_URI = os.environ.get('TEST_DATABASE_URI')
+    PRESERVE_CONTEXT_ON_EXCEPTION = False
+
+
+class ProductionConfig(Config):
     SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URI')
 
 
+
+
 configs = {
-    'dev': DevConfig,
-    'prod': ProdConfig
+    'development': DevelopmentConfig,
+    'production': ProductionConfig,
+    'testing': TestingConfig,
+
+    'default': DevelopmentConfig
 }
 
