@@ -4,7 +4,11 @@
         {% block head %}
         <link rel="stylesheet" href="static/styles.css">
         <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}" type="'image/x-icon">
-        <title>{% block title %}Base page{% endblock %}</title>
+        <title>
+            {% block title %}
+            {% block page_name %}base{% endblock %} | Timetable
+            {% endblock %}
+        </title>
         {% endblock %}
     </head>
     <body>
@@ -12,6 +16,8 @@
             <header>
                 <nav>
                     <a href="/" class="nav_elem">Timetable</a>
+
+                    <a href="/login" class="nav_elem">Sign In</a>
                 </nav>
             </header>
         {% endblock %}
