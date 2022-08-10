@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block css %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/error.css') }}">
+{% endblock %}
+
+{% block page_name %}Error Page{% endblock %} 
+
+{% block content %}
+    <div class="error">
+        <h1 class="error-code">{% block error_code %}Error Code{% endblock %}</h1>
+        <h2 class="error-desc">
+            {% block error_desc %}
+            {% endblock %}
+        </h2>
+    </div>
+{% endblock %}
