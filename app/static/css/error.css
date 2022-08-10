@@ -1,0 +1,21 @@
+/* error page */
+.error {
+    width: 30vw;
+    max-width: 1000px;
+    height: 300px;
+    
+    margin: 50px auto;
+    padding: 20px;
+    border-radius: 50px;
+
+    text-align: center;
+}
+
+.error-code {
+    font-size: 200px;
+    color: #b8b8b8;
+
+    margin-bottom: 20px;
+
+    font-family: Arial, Helvetica, sans-serif;
+}

@@ -6,7 +6,15 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+        <!-- FONTS -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+        {% block css %}
+        {% endblock %}
+
         <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}" type="'image/x-icon">
 
         <title>
@@ -23,14 +31,14 @@
                 <!-- Navbar -->
                 <div class="header-navbar">
                     <nav>
-                        <a class="nav-element" href="/" title="Home page">Home</a>
-                        <a class="nav-element" href="/table/new_timetable">New timetable</a>
+                        <a class="nav-element" href="/" title="Home page">HOME</a>
+                        <a class="nav-element" href="/timetable/new_timetable">NEW TIMETABLE</a>
                     </nav>
                 </div>
 
                 <!-- Searchbar -->
                 <div class="header-searchbar">
-                    <form action="/table/find_table" method="GET">
+                    <form action="/table/find_timetable" method="GET">
                         <input class="searchbar" type="text" placeholder="Timetable ID" name="id">
                     </form>
                 </div>
@@ -40,7 +48,10 @@
                 </div>
             </header>
         {% endblock %}
-        {% block content %}
-        {% endblock %}
+        <main>
+            {% block content %}
+            
+            {% endblock %}    
+        </main>
     </body>
 </html>
