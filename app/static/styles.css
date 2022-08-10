@@ -1,3 +1,72 @@
-.nav_elem {
-    font-size: 20px;
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+
+body {
+    background-color: black;
+}
+
+header {
+    width: 100%;
+    height: 44px;
+
+    background-color: #1c1c1e;
+
+    display: flex;
+    justify-content: left;
+}
+
+.header-navbar, .header-searchbar, .header-profile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+.header-navbar {
+    height: 100%;
+    width: 40%;
+    max-width: 400px;
+}
+
+.nav-element {
+    color: white;
+    font-size: 25px;
+
+    margin-right: 40px;
+}
+
+.header-searchbar {
+    width: 50vw;
+}
+
+.searchbar {
+    border-radius: 25px;
+    width: 50vw;
+    height: 30px;
+
+    text-indent: 10px;
+}
+
+.timetable-name {
+    color: white;
+    font-size: 50px;
+}
+
+.week-day {
+    height: 100px;
+
+    background-color: #1C1C1E;
+
+    border-top: 2px;
+    border-bottom: 2px;
+    border-color: #303033
+}
+
+.week-day + .week-day {
+    margin-top: 30px;
 }

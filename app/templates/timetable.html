@@ -3,10 +3,10 @@
 {% block page_name %}{{ timetable_name }}{% endblock %}
 
 {% block content %}
-<h1 id="timetable_name">{{ timetable_name }}</h1>
+<h1 class="timetable-name">{{ timetable_name }}</h1>
 <div class="timetable">
     {% for week_day in days_of_week %}
-        <div class = "week_day", id="{{ week_day }}">
+        <div class = "week-day", id="{{ week_day }}">
             <h3>{{ week_day }}</h3>
         </div>
     {% endfor %}

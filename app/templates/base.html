@@ -1,9 +1,14 @@
 <!DOCTYPE html>
+
 <html lang="en">
     <head>
         {% block head %}
-        <link rel="stylesheet" href="static/styles.css">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
         <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}" type="'image/x-icon">
+
         <title>
             {% block title %}
             {% block page_name %}base{% endblock %} | Timetable
@@ -11,14 +16,28 @@
         </title>
         {% endblock %}
     </head>
+
     <body>
         {% block header %}
             <header>
-                <nav>
-                    <a href="/" class="nav_elem">Timetable</a>
+                <!-- Navbar -->
+                <div class="header-navbar">
+                    <nav>
+                        <a class="nav-element" href="/" title="Home page">Home</a>
+                        <a class="nav-element" href="/table/new_timetable">New timetable</a>
+                    </nav>
+                </div>
 
-                    <a href="/login" class="nav_elem">Sign In</a>
-                </nav>
+                <!-- Searchbar -->
+                <div class="header-searchbar">
+                    <form action="/table/find_table" method="GET">
+                        <input class="searchbar" type="text" placeholder="Timetable ID" name="id">
+                    </form>
+                </div>
+
+                <div class="header-profile">
+
+                </div>
             </header>
         {% endblock %}
         {% block content %}
