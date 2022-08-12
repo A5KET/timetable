@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 
 <html lang="en">
+
     <head>
         {% block head %}
         <meta charset="UTF-8">
@@ -11,11 +12,12 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap" rel="stylesheet">
 
-        <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/header.css') }}">
         {% block css %}
         {% endblock %}
 
-        <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}" type="'image/x-icon">
+        <link rel="shortcut icon" href="{{ url_for('static', filename='img/favicon.ico') }}" type="'image/x-icon">
 
         <title>
             {% block title %}
@@ -25,33 +27,17 @@
         {% endblock %}
     </head>
 
+
     <body>
         {% block header %}
-            <header>
-                <!-- Navbar -->
-                <div class="header-navbar">
-                    <nav>
-                        <a class="nav-element" href="/" title="Home page">HOME</a>
-                        <a class="nav-element" href="/timetable/new_timetable">NEW TIMETABLE</a>
-                    </nav>
-                </div>
-
-                <!-- Searchbar -->
-                <div class="header-searchbar">
-                    <form action="/table/find_timetable" method="GET">
-                        <input class="searchbar" type="text" placeholder="Timetable ID" name="id">
-                    </form>
-                </div>
-
-                <div class="header-profile">
-
-                </div>
-            </header>
+            {% include 'main/header.html'   %}
         {% endblock %}
-        <main>
-            {% block content %}
-            
-            {% endblock %}    
-        </main>
+        <div class="page-content">
+            <main>
+                {% block content %}
+                {% endblock %}    
+            </main>
+        </div>
     </body>
+
 </html>

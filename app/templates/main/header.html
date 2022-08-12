@@ -1,0 +1,22 @@
+<header>
+    <div class="header-content">
+
+        <!-- LOGO -->
+        <a class="logo" href="/" title="Main page">
+                <img class="logo-img" src="{{ url_for('static', filename='img/white-logo.svg') }}" alt="logo" width="48" height="48">
+                <strong class="logo-name">Timetable</strong>
+        </a>
+
+        <!-- NAVBAR -->
+        <nav class="navbar">
+            <a class="nav-url" href="/timetable/create_timetable/">NEW TIMETABLE</a>
+            <a class="nav-url" href="/profile/">PROFILE</a>'
+            <form class="nav-searchbar" action="/timetable/find_timetable/" method="GET">
+                <input class="searchbar" type="search" name="timetable_name" placeholder="Timetable name" minlength="1">
+                <button class="search-button" type="submit"><img src="{{ url_for('static', filename='img/magnifier.svg') }}" alt=""></button>
+            </form>
+
+        </nav>
+
+    </div>
+</header>

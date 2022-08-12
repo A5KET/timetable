@@ -1,0 +1,88 @@
+header {
+    width: 100vw;
+    height: 55px;
+
+    background-color: #212529;
+    display: block;
+}
+
+.header-content {
+    width: 1300px;
+    margin: 0px auto;
+
+    display: flex;
+}
+
+.logo {
+    display: flex;
+    vertical-align: middle;
+    flex: 1;
+
+    color: white;
+}
+.logo-img, .logo-name {
+    margin: auto 4px;
+}
+
+.logo-name {
+    font-size: 40px;
+}
+
+.navbar {
+    display: inline-flex;
+    margin: auto 0px;
+}
+
+.nav-url {
+    margin: 0px 5px;
+
+    font-size: 25px; 
+    color: white;
+}
+
+.nav-url:hover {
+    color: lightslategrey;
+}
+
+.nav-searchbar {
+    width: 280px;
+    height: 100%;
+
+    margin: auto 0px;
+
+    display: flex;
+}
+
+.searchbar {
+    width: 220px;
+    height: 32px;
+    vertical-align: middle;
+
+    border-bottom-left-radius: 7px;
+    border-top-left-radius: 7px;
+
+    text-indent: 5px;
+}
+
+.searchbar:focus {
+    outline: none;
+
+}
+
+
+.search-button {
+    width: 15%;
+    height: 32px;
+    padding-top: 5px;
+
+    border-left: 1px solid black;
+
+    border-top-right-radius: 7px;
+    border-bottom-right-radius: 7px;
+
+    font-size: 17px;
+    cursor: pointer;
+    background-color: rgb(226, 226, 226);
+    color: black;
+}
+

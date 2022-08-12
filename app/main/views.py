@@ -7,17 +7,6 @@ from . import main
 def index():
     return flask.render_template('index.html')
 
-@main.route('/timetable/find_timetable', methods=['GET'])
-def find_table():
-    table_id = flask.request.args.get('id')
-    if table_id:
-        return flask.redirect('/table/' + table_id)
-
-@main.route('/timetable/new_timetable', methods=['GET', 'POST'])
-def create_table():
-    return flask.render_template('/timetable/create_table.html')
-    
-
 
 @main.route('/timetable/<timetable_name>')
 def timetable(timetable_name):
@@ -26,3 +15,17 @@ def timetable(timetable_name):
                                 days_of_week=['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
     )
 
+
+@main.route('/timetable/find_timetable/', methods=['GET'])
+def find_table():
+    table_id = flask.request.args.get('timetable_name')
+    if table_id:
+        return flask.redirect('/table/' + table_id)
+    else:
+        return flask.redirect('/', 404)
+
+
+@main.route('/timetable/create_timetable/', methods=['GET', 'POST'])
+def create_table():
+    return flask.render_template('/timetable/create_table.html')
+    
