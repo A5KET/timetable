@@ -1,7 +1,22 @@
-{ {% extends 'base.html' %}}
+{% extends 'base.html' %}}
+
+{% block css %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/auth.css') }}">
+{% endblock %}
 
 {% block page_name %}Sign Up{% endblock %}
 
 {% block content %}
-    
+    <div class="signup-form">
+        <div class="signup-top">
+            <div class="logo">
+                <h1 class="logo-name">Sign Up</h1>
+                <img class="logo-img" src="{{ url_for('static', filename='img/black-logo.svg') }}" alt="logo">
+            </div>
+        </div>
+        <hr class="border">
+        <div class="signup-fields">
+
+        </div>
+    </div>
 {% endblock %}
