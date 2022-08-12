@@ -15,17 +15,28 @@ header {
 
 .logo {
     display: flex;
-    vertical-align: middle;
+
     flex: 1;
 
     color: white;
 }
-.logo-img, .logo-name {
-    margin: auto 4px;
+
+.logo-url {
+    height: 50px;
+    vertical-align: middle;
+
+    color: white;
 }
 
-.logo-name {
-    font-size: 40px;
+.logo-url:hover {
+    color: lightslategray;
+}
+
+.logo-img, .logo-name {
+    font-size: 41px;
+    vertical-align: middle;
+    
+    display: inline;
 }
 
 .navbar {
@@ -34,7 +45,7 @@ header {
 }
 
 .nav-url {
-    margin: 0px 5px;
+    margin: 0px 15px;
 
     font-size: 25px; 
     color: white;
@@ -49,6 +60,7 @@ header {
     height: 100%;
 
     margin: auto 0px;
+    margin-left: 10px;
 
     display: flex;
 }

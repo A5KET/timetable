@@ -1,7 +1,26 @@
 {% extends 'base.html' %}
 
-{% block page_name %}Sing In{% endblock %}
+{% block css %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/auth/login.css') }}">
+{% endblock %}
+
+{% block page_name %}Login{% endblock %}
 
 {% block content %}
-    <h1>Hello</h1>
+    <div class="login">
+        <div class="login-top">
+            <div class="top-title">
+                <strong class="title-name">Login</strong>
+                <img class="title-logo" src="{{ url_for('static', filename='img/black-logo.svg') }}" height="85" width="85">
+            </div>
+        </div>
+        <form class="login-form" action="/login/check_user" method="GET">
+            <input class="form-field" type="text" placeholder="username or email">
+            <input class="form-field" type="text" placeholder="password">
+            <button class="form-button" type="submit" value="Submit">LOGIN</button>
+        </form>
+        <div class="form-text">
+            Need an account? <a class="bottom-url" href="/signup/">SIGN UP</a>
+        </div>
+    </div>
 {% endblock %}

@@ -8,6 +8,11 @@ def login():
     return flask.render_template('auth/login.html')
 
 
+@auth.route('/login/check_user', methods=['GET'])
+def check_user():
+    return flask.render_template('auth/profile.html')
+
+
 @auth.route('/signup/')
 def signup():
     return flask.render_template('auth/signup.html')
