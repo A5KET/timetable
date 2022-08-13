@@ -1,22 +1,27 @@
-{% extends 'base.html' %}}
+{% extends 'base.html' %}
 
 {% block css %}
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/auth.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/auth/signup.css') }}">
 {% endblock %}
 
 {% block page_name %}Sign Up{% endblock %}
 
 {% block content %}
-    <div class="signup-form">
+    <div class="signup">
         <div class="signup-top">
-            <div class="logo">
-                <h1 class="logo-name">Sign Up</h1>
-                <img class="logo-img" src="{{ url_for('static', filename='img/black-logo.svg') }}" alt="logo">
+            <div class="top-title">
+                <strong class="title-name">Sign Up</strong>
+                <img class="title-logo" src="{{ url_for('static', filename='img/black-logo.svg') }}" height="85" width="85">
             </div>
         </div>
-        <hr class="border">
-        <div class="signup-fields">
-            
+        <form class="login-form" action="/login/check_user" method="GET">
+            <input class="form-field" type="text" placeholder="username" id="username" required>
+            <input class="form-field" type="email" placeholder="email" id="email" required>
+            <input class="form-field" type="password" placeholder="password" id="password" required>
+            <button class="form-button" type="submit" value="Submit">LOGIN</button>
+        </form>
+        <div class="form-text">
+            Need an account? <a class="bottom-url" href="/signup/">SIGN UP</a>
         </div>
     </div>
 {% endblock %}

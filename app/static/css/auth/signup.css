@@ -1,6 +1,6 @@
-.login {
+.signup {
     width: var(--auth-width);
-    height: 470px;
+    height: 525px;
 
     margin: 70px auto;
     border-radius: 30px;
@@ -9,7 +9,7 @@
     background-color: white;
 }
 
-.login-top {
+.signup-top {
     height: 120px;
     
     border-bottom: 2px solid black;
@@ -25,9 +25,9 @@
 }
 
 .title-name {
-    font-size: 65px;
+    font-size: 62px;
 
-    margin-right: 20px;
+    margin-right: 5px;
 
     display: inline;
 }
@@ -75,7 +75,6 @@
 .form-button:focus {
     background-color: rgb(80, 80, 80);
 }
-
 
 .form-text {
     text-align: center;

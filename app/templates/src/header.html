@@ -14,7 +14,7 @@
             <a class="nav-url" href="/timetable/create_timetable/">NEW TIMETABLE</a>
             <a class="nav-url" href="/login/">LOGIN</a>
             <form class="nav-searchbar" action="/timetable/find_timetable/" method="GET">
-                <input class="searchbar" type="search" name="timetable_name" placeholder="Timetable name" minlength="1">
+                <input class="searchbar" type="search" name="timetable_name" placeholder="Timetable name" minlength="1" required>
                 <button class="search-button" type="submit"><img src="{{ url_for('static', filename='img/magnifier.svg') }}" alt=""></button>
             </form>
         </nav>

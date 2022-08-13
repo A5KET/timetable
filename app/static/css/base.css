@@ -1,3 +1,10 @@
+:root {
+    --page-width: 1100px;
+
+    --auth-width: 340px;
+}
+
+
 * {
     margin: 0;
     padding: 0;
@@ -14,7 +21,7 @@ body {
 }
 
 main {
-    width: 1300px;
+    width: var(--page-width);
 
     margin: 50px auto;
 }

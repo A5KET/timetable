@@ -7,7 +7,7 @@ header {
 }
 
 .header-content {
-    width: 1300px;
+    width: var(--page-width);
     margin: 0px auto;
 
     display: flex;
