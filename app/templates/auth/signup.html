@@ -14,11 +14,18 @@
                 <img class="title-logo" src="{{ url_for('static', filename='img/black-logo.svg') }}" height="85" width="85">
             </div>
         </div>
-        <form class="login-form" action="/login/check_user" method="GET">
+        <form class="login-form" action="/signup/" method="POST">
+            {{ form.csrf_token }}
+            {{ form.username(class='form-field', placeholder='username') }}
+            {{ form.email(class='form-field', placeholder='email') }}
+            {{ form.password(class='form-field', placeholder='password') }}
+            {{ form.submit(class='form-button') }}
+            <!--
             <input class="form-field" type="text" placeholder="username" id="username" required>
             <input class="form-field" type="email" placeholder="email" id="email" required>
             <input class="form-field" type="password" placeholder="password" id="password" required>
             <button class="form-button" type="submit" value="Submit">LOGIN</button>
+            -->
         </form>
         <div class="form-text">
             Need an account? <a class="bottom-url" href="/signup/">SIGN UP</a>

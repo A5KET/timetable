@@ -1,6 +1,6 @@
 header {
     width: 100vw;
-    height: 55px;
+    height: var(--header-height);
 
     background-color: #212529;
     display: block;
@@ -8,6 +8,7 @@ header {
 
 .header-content {
     width: var(--page-width);
+    height: var(--header-height);
     margin: 0px auto;
 
     display: flex;
