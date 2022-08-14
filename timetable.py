@@ -1,12 +1,13 @@
 import os
 
-import flask_migrate
+from flask_migrate import Migrate
 
 import app
+from app import db
 
 
 app = app.create_app(os.getenv('FLASK_CONFIG') or 'default')
-migrate = flask_migrate.Migrate
+migrate = Migrate(app, db)
 
 
 @app.cli.command()
