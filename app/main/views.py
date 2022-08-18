@@ -17,7 +17,7 @@ def timetable(timetable_name):
 
 
 @main.route('/timetable/find_timetable/', methods=['GET'])
-def find_table():
+def find_timetable():
     table_id = flask.request.args.get('timetable_name')
     if table_id:
         return flask.redirect('/table/' + table_id)
@@ -26,6 +26,6 @@ def find_table():
 
 
 @main.route('/timetable/create_timetable/', methods=['GET', 'POST'])
-def create_table():
+def create_timetable():
     return flask.render_template('/timetable/create_table.html')
     

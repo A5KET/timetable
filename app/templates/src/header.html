@@ -3,7 +3,7 @@
 
         <!-- LOGO -->
         <div class="logo">
-            <a class="logo-url" href="/" title="Main page">
+            <a class="logo-url" href="{{ url_for('main.index') }}" title="Main page">
                     <img class="logo-img" src="{{ url_for('static', filename='img/white-logo.svg') }}" alt="logo" width="48" height="48">
                     <strong class="logo-name">Timetable</strong>
             </a>
@@ -11,11 +11,15 @@
 
         <!-- NAVBAR -->
         <nav class="navbar">
-            <a class="nav-url" href="/timetable/create_timetable/">NEW TIMETABLE</a>
-            <a class="nav-url" href="/login/">LOGIN</a>
+            <a class="nav-url" href="{{ url_for('main.create_timetable') }}">NEW TIMETABLE</a>
+            {% if current_user.is_authenticated %}
+                <a class="nav-url" href="{{ url_for('auth.profile') }}">PROFILE</a>
+            {% else %}
+                <a class="nav-url" href="{{ url_for('auth.login') }}">LOGIN</a>
+            {% endif %}
 
             <!--SEARCHBAR -->
-            <form class="nav-searchbar" action="/timetable/find_timetable/" method="GET">
+            <form class="nav-searchbar" action="{{ url_for('main.find_timetable') }}" method="GET">
                 <input class="searchbar" type="search" name="timetable_name" placeholder="Timetable name" minlength="1" required>
                 <button class="search-button" type="submit"><img src="{{ url_for('static', filename='img/magnifier.svg') }}" alt=""></button>
             </form>
