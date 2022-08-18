@@ -1,18 +1,23 @@
 import sqlalchemy as sql
+import flask_login
 
 from . import db
 
 
-class User(db.Model):
+class User(flask_login.UserMixin, db.Model):
     __tablename__ = 'user'
 
     id = db.Column(db.Integer, primary_key=True)
 
-    username = db.Column(db.String(20))
-    email = db.Column(db.String(256))
-    password = db.Column(db.String(20)) # 8 <= password <= 20
+    username = db.Column(db.String(20), unique=True, nullable=False)
+    email = db.Column(db.String(256), unique=True, nullable=False)
+    password = db.Column(db.String(20)) # TODO implement password hashing 
 
     table_info = db.relationship('Table')
+
+
+    def __init__(self, **kwargs):
+        super(User, self).__init__(**kwargs)
 
 
 class Table(db.Model):

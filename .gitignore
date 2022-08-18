@@ -49,3 +49,4 @@ venv/
 
 
 test.sqlite
+db.sqlite
