@@ -1,16 +1,21 @@
-.signup {
-    width: var(--auth-width);
-    height: 525px;
+:root {
+    --auth-width: 320px;
+}
 
+.auth {
+    width: var(--auth-width);
+    
     margin: 70px auto;
     border-radius: 30px;
 
     box-shadow: 0 4px 12px rgb(0 0 0 / 15%);
     background-color: white;
+
+    padding-bottom: 15px;
 }
 
-.signup-top {
-    height: 120px;
+.auth-top {
+    height: 100px;
     
     border-bottom: 2px solid black;
 }
@@ -25,19 +30,42 @@
 }
 
 .title-name {
-    font-size: 62px;
+    font-size: 55px;
     font-weight: 700;
 
-    margin-right: 5px;
+    margin-right: 20px;
 
     display: inline;
 }
 
 .title-logo {
+    width: 85px;
+    height: 85px;
+
     margin-top: 5px;
 }
 
-.login-form {
+/* ERROR MESSAGE */
+
+.error-message {
+    width: 85%;
+
+    margin: 20px auto 0 auto;
+    padding: 5px;
+
+    border-radius: 20px;
+
+    text-align: center;
+    font-size: 17px;
+    font-weight: 300;
+
+    background-color: #fc8684;
+}
+
+/* FORM */
+
+
+.auth-form {
     text-align: center;
 }
 
@@ -47,10 +75,11 @@
 
     margin-top: 25px;
 
-    border: 2px solid black;
+    border: 2px solid #6C757C;
     border-radius: 10px;
 
     font-size: 20px;
+    font-weight: 600;
     text-indent: 7px;
 }
 
@@ -69,6 +98,7 @@
     border-radius: 50px;
 
     font-size: 28px;
+    font-weight: 600;
     color: white;
 
     background-color: black;
@@ -78,11 +108,11 @@
     background-color: rgb(80, 80, 80);
 }
 
+
 .form-text {
+    margin: 25px 0;
+
     text-align: center;
-
-    margin-top: 25px;
-
     color: rgb(91, 92, 94);
 }
 

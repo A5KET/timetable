@@ -1,0 +1,33 @@
+<header>
+    <div class="header-content">
+
+        <!-- LOGO -->
+        <a class="logo-url" href="{{ url_for('main.index') }}" title="Main page">
+                <img class="logo-img" src="{{ url_for('static', filename='img/logo-black.svg') }}" alt="logo">
+                <span class="logo-name">Timetable</span>
+        </a>
+
+        <div class="header-buffer">
+        </div>
+
+        <!-- NAVBAR -->
+        <nav class="navbar">
+            <a class="nav-url" href="{{ url_for('main.create_timetable') }}">
+                <img src="{{ url_for('static', filename='img/header-plus.svg') }}">
+                <span class="nav-text">New Timetable</span>
+            </a>
+            {% if current_user.is_authenticated %}
+            <a class="nav-url" href="{{ url_for('auth.profile') }}">
+                <img class="nav-profile" src="{{ url_for('static', filename='img/user-profile.svg') }}">
+                <span class="nav-text">Profile</span>
+            </a>
+            {% else %}
+            <a class="nav-url" href="{{ url_for('auth.signup') }}">
+                <img class="nav-profile" src="{{ url_for('static', filename='img/user-signup.svg') }}">
+                <span class="nav-text">Sign Up</span>
+            </a>
+            {% endif %}
+
+        </nav>
+    </div>
+</header>

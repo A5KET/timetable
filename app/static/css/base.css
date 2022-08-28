@@ -1,9 +1,5 @@
 :root {
-    --page-width: 1100px;
-
-    --header-height: 55px;
-
-    --auth-width: 340px;
+    --page-width: 1400px;
 }
 
 
@@ -19,7 +15,7 @@
 }
 
 body {
-    background-color: #DEE2E6;
+    background-color: #EAEAEA;
 }
 
 main {
