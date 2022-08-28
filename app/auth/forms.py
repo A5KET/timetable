@@ -21,16 +21,17 @@ class SignUp(flask_wtf.FlaskForm):
 
     def validate_username(self, field):
         if models.User.query.filter_by(username=field.data).first():
-            raise wtf.ValidationError
+            raise wtf.ValidationError('Username already taken')
 
     def validate_email(self, field):
         if models.User.query.filter_by(email=field.data).first():
-            raise wtf.ValidationError
+            raise wtf.ValidationError('Email already taken')
 
 
-class Login(flask_wtf.FlaskForm):
-    username = wtf.StringField('username', validators=[
+class SignIn(flask_wtf.FlaskForm):
+    email = wtf.EmailField('email', validators=[
         vld.InputRequired(),
+        vld.Email(),
         vld.Length(6, 20)
         ])
 

@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block css %}
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/auth/sign_base.css') }}">
+{% endblock %}
+
+{% block content %}
+    <div class="auth">
+        <div class="auth-top">
+            <div class="top-title">
+                <span class="title-name">{% block title_name %}Sign Base{% endblock %}</span>
+            </div>
+        </div>
+
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="error-message">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+
+        {% block auth_form %}
+            form
+        {% endblock %}
+
+        <div class="form-text">
+            {% block form_text %}
+            Need an account? <a class="bottom-url" href="{{ url_for('auth.signup') }}">SIGN UP</a>
+            {% endblock %}
+        </div>
+    </div>
+{% endblock %}
