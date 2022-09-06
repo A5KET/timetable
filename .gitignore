@@ -47,6 +47,6 @@ instance/
 .venv
 venv/
 
+/.idea
 
 test.sqlite
-db.sqlite
