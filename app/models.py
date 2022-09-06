@@ -1,4 +1,3 @@
-import sqlalchemy as sql
 import flask_login
 from werkzeug import security
 

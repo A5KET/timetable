@@ -1,8 +1,7 @@
-from re import L
-import flask
 import flask_wtf
 import wtforms as wtf
 from wtforms import validators as vld
+from wtforms.validators import ValidationError, StopValidation
 
 
 from app import models
@@ -12,7 +11,7 @@ class SignUp(flask_wtf.FlaskForm):
     username = wtf.StringField('username', validators=[
         vld.InputRequired(), 
         vld.Length(6, 20), 
-        vld.Regexp(r'^[A-Za-z][A-Za-z0-9_.]*$', 0, 'Usernames must have only letters, numbers, dots or underscores'),
+        vld.Regexp(r'^[A-Za-z0-9_.]*$', 0, 'Usernames must have only letters, numbers, dots or underscores'),
     ])
 
     email = wtf.EmailField('email', validators=[vld.InputRequired(), vld.Email()])
@@ -32,7 +31,7 @@ class SignIn(flask_wtf.FlaskForm):
     email = wtf.EmailField('email', validators=[
         vld.InputRequired(),
         vld.Email(),
-        vld.Length(6, 20)
+        vld.Length(6, 20, message="length")
         ])
 
     password = wtf.PasswordField('password', validators=[vld.Length(6, message='Invalid password')])
