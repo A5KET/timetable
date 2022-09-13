@@ -12,20 +12,16 @@ header {
 .header-content {
     width: var(--page-width);
     height: var(--header-height);
-    margin: 0px auto;
+    margin: 0 auto;
 
     display: flex;
-}
-
-.header-buffer {
-    flex: 1;
+    justify-content: space-between;
 }
 
 .logo-url {
     width: 300px;
-    
+
     display: flex;
-    vertical-align: middle;
     
     font-size: 45px;
     color: #000000;
@@ -44,7 +40,6 @@ header {
 
 .navbar {
     display: flex;
-    margin: auto 0 auto 0;
 }
 
 .nav-url {

@@ -2,28 +2,25 @@
     <div class="header-content">
 
         <!-- LOGO -->
-        <a class="logo-url" href="{{ url_for('main.index') }}" title="Main page">
-                <img class="logo-img" src="{{ url_for('static', filename='img/logo-black.svg') }}" alt="logo">
+        <a class="logo-url" href="{{  url_for('main.index') }}" title="Main page">
+                <img class="logo-img" src="/static/img/logo-black.svg" alt="logo">
                 <span class="logo-name">Timetable</span>
         </a>
 
-        <div class="header-buffer">
-        </div>
-
         <!-- NAVBAR -->
         <nav class="navbar">
-            <a class="nav-url" href="{{ url_for('main.create_timetable') }}">
-                <img src="{{ url_for('static', filename='img/header-plus.svg') }}">
+            <a class="nav-url" href="{{ url_for('timetable.new_timetable') }}">
+                <img src="/static/img/header-plus.svg" alt="create timetable">
                 <span class="nav-text">New Timetable</span>
             </a>
             {% if current_user.is_authenticated %}
             <a class="nav-url" href="{{ url_for('auth.profile') }}">
-                <img class="nav-profile" src="{{ url_for('static', filename='img/user-profile.svg') }}">
+                <img src="/static/img/user-profile.svg" alt="profile">
                 <span class="nav-text">Profile</span>
             </a>
             {% else %}
             <a class="nav-url" href="{{ url_for('auth.signup') }}">
-                <img class="nav-profile" src="{{ url_for('static', filename='img/user-signup.svg') }}">
+                <img src="/static/img/user-signup.svg" alt="signup">
                 <span class="nav-text">Sign Up</span>
             </a>
             {% endif %}
