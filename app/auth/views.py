@@ -1,6 +1,6 @@
 import flask
 import flask_login
-from flask_login import current_user
+from flask_login import login_required, current_user
 
 from .forms import SignUp, SignIn
 from app import db, login_manager
@@ -70,7 +70,7 @@ def signup():
 
 
 @auth.route('/logout')
-@flask_login.login_required
+@login_required
 def logout():
     flask_login.logout_user()
     flask.flash('You have been logged out')
@@ -78,6 +78,6 @@ def logout():
 
 
 @auth.route('/profile/')
-@flask_login.login_required
+@login_required
 def profile():
     return flask.render_template('auth/profile.html')
