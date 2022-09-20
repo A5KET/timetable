@@ -1,7 +1,19 @@
+from enum import Enum
+
 import flask_login
 from werkzeug import security
 
 from . import db
+
+
+class Weekday(Enum):
+    monday = 'Monday'
+    tuesday = 'Tuesday'
+    wednesday = 'Wednesday'
+    thursday = 'Thursday'
+    friday = 'Friday'
+    saturday = 'Saturday'
+    sunday = 'Sunday'
 
 
 class User(flask_login.UserMixin, db.Model):
@@ -13,7 +25,7 @@ class User(flask_login.UserMixin, db.Model):
     email = db.Column(db.String(256), unique=True, nullable=False)
     password_hash = db.Column(db.String(128)) 
 
-    table_info = db.relationship('Timetable')
+    timetables = db.relationship('Timetable')
 
 
     def __init__(self, **kwargs):
@@ -40,7 +52,7 @@ class Timetable(db.Model):
     name = db.Column(db.String(64))
     url = db.Column(db.String(64))
 
-    week = db.relationship('Week')
+    weeks = db.relationship('Week')
 
 
 class Week(db.Model):
@@ -51,16 +63,7 @@ class Week(db.Model):
 
     week_number = db.Column(db.Integer) # <4
 
-    day = db.relationship('Day')
-
-
-class Weekday(db.Model):
-    __tablename__ = 'weekday'
-
-    id = db.Column(db.Integer, primary_key=True)
-    weekday = db.Column(db.String())
-
-    day = db.relationship('Day')
+    days = db.relationship('Day')
 
 
 class Day(db.Model):
@@ -68,9 +71,9 @@ class Day(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     week_id = db.Column(db.Integer, db.ForeignKey('week.id'))
-    weekday_id = db.Column(db.Integer, db.ForeignKey('weekday.id'))
+    weekday = db.Column(db.Enum(Weekday))
 
-    event = db.relationship('Event')
+    events = db.relationship('Event')
 
 
 class Event(db.Model):
@@ -81,6 +84,7 @@ class Event(db.Model):
 
     name = db.Column(db.String(32))
     description = db.Column(db.String(256))
+    person = db.Column(db.String(32))
     start_time = db.Column(db.Time)
-    end_time = db.Column(db.Time) 
+    end_time = db.Column(db.Time)
 
